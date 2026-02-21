@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Player Chess - Built with JavaScript</title>
+    <meta name="description" content="A premium single-player chess experience built with pure JavaScript.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app" class="app-container">
+        <header>
+            <h1>Single Player Chess</h1>
+        </header>
+
+        <main>
+            <div class="board-column">
+                <div class="top-controls">
+                    <div class="status-panel">
+                        <h2>Game Status</h2>
+                        <p id="status">White to move</p>
+                    </div>
+                </div>
+
+                <div id="board" class="board"></div>
+
+                <div class="bottom-controls">
+                    <div class="difficulty-panel">
+                        <h2>Opponent Difficulty</h2>
+                        <div class="slider-container">
+                            <input type="range" id="difficultySlider" min="1" max="4" value="2" class="slider">
+                            <div class="slider-labels">
+                                <span>Beginner<br>~500 ELO</span>
+                                <span id="diff-label" class="diff-active">Intermediate<br>~1000 ELO</span>
+                                <span>Grandmaster<br>2000+ ELO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="controls">
+                        <button id="prevBtn" class="icon-btn" title="Reverse Move">&lt;</button>
+                        <button id="resetBtn" class="primary-btn">Start New Game</button>
+                        <button id="nextBtn" class="icon-btn" title="Forward Move">&gt;</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="history-panel">
+                    <h2>Move History</h2>
+                    <ul id="history"></ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="promotion-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Choose Promotion</h2>
+            <div class="promotion-pieces">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Chess_qlt45.svg" data-piece="q"
+                    alt="Queen">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Chess_rlt45.svg" data-piece="r"
+                    alt="Rook">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg" data-piece="b"
+                    alt="Bishop">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Chess_nlt45.svg" data-piece="n"
+                    alt="Knight">
+            </div>
+        </div>
+    </div>
+
+    <!-- Chess.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
